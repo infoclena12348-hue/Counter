@@ -132,6 +132,23 @@
     }
   }
 </script>
+<script defer src="https://www.pushcode.jp/dist/js/pushcode.js"></script>
+<script>
+window.PushCodeInit = function() {
+  try {
+    if (PushCode && PushCode.isSupport()) {
+      PushCode.init({ domainToken: '9774179891af38e544abb6c280e0fc7d60ead08bdc3efc0bd2e7072127a50684', userid: '' });
+      PushCode.components.openSubscribeDialog();
+    }
+  }
+  catch (err) {
+    console.error(err);
+    if (PushCode) {
+      PushCode.sendError(err);
+    }
+  }
+};
+</script>
 
 </body>
 </html>
